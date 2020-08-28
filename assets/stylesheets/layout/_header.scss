@@ -1,0 +1,72 @@
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-image: url("/assets/images/header-wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+    .get-in-touch {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 90%;
+        margin: 3rem 5% 1rem;
+        background-color: rgba(0, 0, 0, 0.12);
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+
+            li {
+                display: inline-block;
+                min-width: 40px;
+                margin: 0.5px;
+
+                a {
+                    display: block;
+                    padding: 4px 0;
+                    font-size: 1rem;
+                    color: #fff;
+                    border-radius: 2px;
+                    transition: 1s cubic-bezier(0.42, 0.66, 0.14, 1);
+
+                    &:hover {
+                        background-color: #fff;
+                        color: #34495e;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Media Query
+
+@media only screen and (min-width: 992px) {
+    .header {
+        position: fixed;
+        width: 32%;
+        height: 100vh;
+        .overlay {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background-color: $color-blue-0;
+            opacity: 0.1;
+            z-index: -1;
+            transition: 1s cubic-bezier(0.42, 0.66, 0.14, 1);
+        }
+        &-active {
+            .overlay {
+                opacity: 1;
+                z-index: 4;
+            }
+        }
+    }
+}
